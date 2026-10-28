@@ -24,13 +24,22 @@ const SingleTestimonial = ({ testimonial }: { testimonial: Testimonial }) => {
 
   return (
     <div className="h-full rounded-2xl border border-stroke-dark p-6">
+      <span
+        aria-hidden
+        className="popIn-quote mb-2 block text-4xl leading-none text-yellow/60"
+      >
+        “
+      </span>
       <div className="mb-4 flex items-center gap-1">{ratingIcons}</div>
       <p className="mb-6 text-base leading-relaxed text-body-color-dark">
         “{content}”
       </p>
       <div className="flex items-center gap-3">
-        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full">
-          <Image src={image} alt={name} fill />
+        <div className="relative h-10 w-10 shrink-0">
+          <span className="testimonial-ring absolute inset-0 rounded-full bg-yellow/40" />
+          <div className="icon-float relative h-10 w-10 overflow-hidden rounded-full">
+            <Image src={image} alt={name} fill />
+          </div>
         </div>
         <div>
           <h3 className="text-sm font-semibold text-white">{name}</h3>

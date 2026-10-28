@@ -25,9 +25,35 @@ const StatsBar = () => {
   return (
     <section className="bg-gray-light py-10 dark:bg-bg-color-dark">
       <div className="container">
-        <h2 className="mb-8 text-center text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
-          Trusted by Drivers Across Dubai
-        </h2>
+        <div className="mb-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-5">
+          <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="var(--color-primary)"
+              strokeWidth={1.6}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-full w-full"
+            >
+              <circle cx="12" cy="5" r="2.6" fill="var(--color-primary)" stroke="none" />
+              <path d="M12 7.6V15" />
+              <path d="M12 15l-4 6" />
+              <path d="M12 15l4 6" />
+              <path d="M12 9.5l-4.5 3" />
+              <g style={{ animation: "wave 1.6s ease-in-out infinite", transformOrigin: "12px 9.5px" }}>
+                <path d="M12 9.5l5-4" />
+                <circle cx="17" cy="5.5" r="1" fill="var(--color-primary)" stroke="none" />
+              </g>
+            </svg>
+            <span className="absolute -right-1 -top-1 flex h-6 w-6 animate-[popIn_0.6s_ease_0.3s_both] items-center justify-center rounded-full bg-primary text-xs text-black shadow-md">
+              <span className="icon-float inline-block">✓</span>
+            </span>
+          </div>
+          <h2 className="text-center text-2xl font-bold leading-tight text-white sm:text-3xl md:text-4xl">
+            Trusted by Drivers Across Dubai
+          </h2>
+        </div>
         <div className="grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-4">
           {stats.map((stat, i) => (
             <div
@@ -43,6 +69,10 @@ const StatsBar = () => {
               <h3 className="text-lg font-bold text-primary sm:text-3xl md:text-4xl">
                 {stat.value}
               </h3>
+              <span
+                className="h-0.5 w-6 origin-center animate-[barPulse_2.2s_ease-in-out_infinite] rounded-full bg-primary/60"
+                style={{ animationDelay: `${i * 0.25}s` }}
+              />
               <p className="text-xs font-medium text-body-color sm:text-base">
                 {stat.label}
               </p>

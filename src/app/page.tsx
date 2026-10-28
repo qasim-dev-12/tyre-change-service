@@ -5,7 +5,6 @@ import TrustIntro from "@/components/Home/TrustIntro";
 import WhyChooseUs from "@/components/Home/WhyChooseUs";
 import ServicesGrid from "@/components/Home/ServicesGrid";
 import BrandsShowcase from "@/components/Home/BrandsShowcase";
-import TyreFittingShowcase from "@/components/Home/TyreFittingShowcase";
 import HowItWorks from "@/components/Home/HowItWorks";
 import BulletSection from "@/components/Home/BulletSection";
 import VehicleTypes from "@/components/Home/VehicleTypes";
@@ -28,7 +27,6 @@ export default function Home() {
       <ScrollUp />
       <Hero />
       <BrandsShowcase />
-      <TyreFittingShowcase />
       <HowItWorks />
       <VehicleTypes />
       <StatsBar />

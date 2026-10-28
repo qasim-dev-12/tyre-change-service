@@ -16,6 +16,24 @@ const FAQ = () => {
   return (
     <section className="py-10 md:py-20 lg:py-28">
       <div className="container">
+        <span className="icon-pulse mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-9 w-9"
+          >
+            <circle cx="9" cy="7.2" r="3.2" />
+            <path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5" />
+            <circle cx="18" cy="7.5" r="4.3" />
+            <path d="M16.6 6.1c.2-.7.9-1.1 1.6-1 .8.1 1.3.8 1.2 1.5-.1.6-.5.9-1 1.2-.4.3-.6.5-.6 1" />
+            <circle cx="18" cy="10.1" r="0.15" fill="currentColor" />
+          </svg>
+        </span>
+
         <SectionTitle
           title="Common Questions About Tyre Repair Services in Dubai"
           paragraph=""

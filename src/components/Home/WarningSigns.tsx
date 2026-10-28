@@ -1,9 +1,29 @@
 const signs = [
-  { icon: "📏", text: "Tread depth below 1.6mm or worn tread indicators" },
-  { icon: "💥", text: "Cracks, cuts, or bulges on the sidewall" },
-  { icon: "🌬️", text: "Frequent loss of tyre pressure" },
-  { icon: "📳", text: "Vibration or pulling while driving" },
-  { icon: "⏳", text: "Tyre older than 5-6 years regardless of tread" },
+  {
+    icon: "📏",
+    text: "Tread depth below 1.6mm or worn tread indicators",
+    anim: "sign-icon-tread",
+  },
+  {
+    icon: "💥",
+    text: "Cracks, cuts, or bulges on the sidewall",
+    anim: "sign-icon-crack",
+  },
+  {
+    icon: "🌬️",
+    text: "Frequent loss of tyre pressure",
+    anim: "sign-icon-air",
+  },
+  {
+    icon: "📳",
+    text: "Vibration or pulling while driving",
+    anim: "sign-icon-vibration",
+  },
+  {
+    icon: "⏳",
+    text: "Tyre older than 5-6 years regardless of tread",
+    anim: "sign-icon-age",
+  },
 ];
 
 const WarningSigns = () => {
@@ -14,7 +34,7 @@ const WarningSigns = () => {
           {/* Left: alert-style panel */}
           <div className="w-full px-4 lg:w-2/5">
             <div className="rounded-2xl border border-yellow/30 bg-yellow/5 p-6 sm:p-8">
-              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow/15 text-2xl">
+              <span className="icon-pulse mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-yellow/15 text-2xl">
                 ⚠️
               </span>
               <span className="mb-3 inline-block text-sm font-semibold uppercase tracking-widest text-yellow">
@@ -40,7 +60,9 @@ const WarningSigns = () => {
                   style={{ animationDelay: `${i * 120}ms` }}
                   className="flex animate-[fadeInUp_0.5s_ease_forwards] items-start gap-3 rounded-xl border border-stroke-dark bg-dark px-4 py-4 opacity-0"
                 >
-                  <span className="text-2xl leading-none">{s.icon}</span>
+                  <span className={`text-2xl leading-none ${s.anim}`}>
+                    {s.icon}
+                  </span>
                   <p className="text-sm font-medium leading-relaxed text-body-color-dark">
                     {s.text}
                   </p>

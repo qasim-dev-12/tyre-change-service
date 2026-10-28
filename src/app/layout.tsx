@@ -10,6 +10,21 @@ import "../styles/index.css";
 
 const sora = Sora({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
+const particles = [
+  { left: 8, top: 12, size: 3, duration: 9, delay: 0 },
+  { left: 18, top: 28, size: 4, duration: 11, delay: 1.2 },
+  { left: 27, top: 8, size: 3, duration: 8, delay: 2.4 },
+  { left: 36, top: 22, size: 5, duration: 12, delay: 0.6 },
+  { left: 45, top: 15, size: 3, duration: 10, delay: 3 },
+  { left: 54, top: 30, size: 4, duration: 9.5, delay: 1.8 },
+  { left: 62, top: 10, size: 3, duration: 11.5, delay: 0.3 },
+  { left: 71, top: 24, size: 5, duration: 8.5, delay: 2.1 },
+  { left: 80, top: 14, size: 3, duration: 10.5, delay: 1.5 },
+  { left: 89, top: 26, size: 4, duration: 9, delay: 2.7 },
+  { left: 14, top: 20, size: 3, duration: 12.5, delay: 3.3 },
+  { left: 94, top: 18, size: 3, duration: 10, delay: 0.9 },
+];
+
 export default function RootLayout({
   children,
 }: {
@@ -99,6 +114,25 @@ export default function RootLayout({
       </head>
 
       <body className={`bg-black ${sora.className}`}>
+        <div
+          aria-hidden
+          className="bg-particles-fade pointer-events-none fixed inset-0 -z-10 overflow-hidden"
+        >
+          {particles.map((p, i) => (
+            <span
+              key={i}
+              className="bg-particle"
+              style={{
+                left: `${p.left}%`,
+                top: `${p.top}%`,
+                width: p.size,
+                height: p.size,
+                animationDuration: `${p.duration}s`,
+                animationDelay: `${p.delay}s`,
+              }}
+            />
+          ))}
+        </div>
         <Providers>
           <div className="isolate">
             <Header />
