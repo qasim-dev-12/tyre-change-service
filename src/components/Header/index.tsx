@@ -70,7 +70,7 @@ const Header = () => {
                 <img
                   src="/images/logo/logo-fixmytyre.png"
                   alt="Fix My Tyre"
-                  className="-my-4 h-28 w-auto object-contain xl:h-32"
+                  className="h-14 w-auto object-contain xl:h-16"
                 />
               </Link>
             </div>
